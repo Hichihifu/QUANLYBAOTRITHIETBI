@@ -1,0 +1,78 @@
+:root {
+    --primary-dark: #2c3e50;
+    --sidebar-bg: #34495e;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    color: white;
+    position: fixed;
+    transition: all 0.3s;
+}
+
+.nav-link {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Content Area */
+.content {
+    margin-left: 250px;
+    padding: 30px;
+}
+
+/* Chat AI Box */
+.ai-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    border: none;
+}
+
+#ai-chat {
+    height: 250px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.user-msg {
+    text-align: right;
+    color: #0d6efd;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.ai-msg {
+    text-align: left;
+    margin-bottom: 8px;
+}
+/* Hiệu ứng thu gọn/mở rộng mượt mà cho hộp chat */
+.ai-box {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Khi thêm class 'collapsed', hộp chat sẽ thu gọn chỉ còn thanh tiêu đề */
+.ai-box.collapsed {
+    height: 45px !important; /* Chiều cao vừa đủ cho thanh header */
+    overflow: hidden;
+}
+
+/* Thêm con trỏ bàn tay khi rê vào tiêu đề để người dùng biết bấm được */
+.ai-box .card-header {
+    cursor: pointer;
+    user-select: none; /* Khống chế không cho bôi đen chữ khi bấm nhanh */
+}
